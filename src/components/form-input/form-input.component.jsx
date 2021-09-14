@@ -13,10 +13,9 @@ const FormInput = ({handleChange, label, ...otherProps }) => (
                 } form-input-label`}
             >
             {label}    
-            </label>)
-            :null
-        }
+            </label>
+        ) : null}
     </div>
-)
+);
 
 export default FormInput;
