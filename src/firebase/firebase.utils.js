@@ -2,7 +2,7 @@ import firebase from 'firebase/compat/app'; //adding 'compat' to resolve the err
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 
-const config = {
+const config = {      
     apiKey: "AIzaSyCNTkFCM45pWPZrBNDr0nDC3DSuF_fMjQg",
     authDomain: "crwn-db-7a24b.firebaseapp.com",
     projectId: "crwn-db-7a24b",
@@ -11,6 +11,32 @@ const config = {
     appId: "1:302477801628:web:51a452d06ec57648175559",
     measurementId: "G-0505HP6HVR"
 };
+
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+  if (!userAuth) return;
+
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+
+  const snapShot = await userRef.get();
+
+  if(!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const createAt = new Date();
+
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createAt,
+        ...additionalData
+      })
+    } catch (error) {
+      console.log('error creating user', error.message);
+    }
+  }
+
+  return userRef;
+}
 
   firebase.initializeApp(config);
 
