@@ -39,7 +39,7 @@ class SignIn extends React.Component{
                     <FormInput
                         name='email'
                         type='email'                          
-                        handlerChange={this.handleChange}
+                        handleChange={this.handleChange}
                         value={this.state.email}
                         label='email'
                         required
