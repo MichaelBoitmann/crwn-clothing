@@ -1,7 +1,16 @@
+// Firebase v9 was use on this application.
+// Firebase library is use to gain access to a shared data structure.
+// Any changes that will be done to these data will be automatically
+// synchronized with the Firebase Cloud and with other clients in less 
+// than a second.
+
 import firebase from 'firebase/compat/app'; //adding 'compat' to resolve the error
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 
+
+// The source of the content from apiKey down to measurementId were
+// taken from Firebase Console.
 const config = {      
     apiKey: "AIzaSyCNTkFCM45pWPZrBNDr0nDC3DSuF_fMjQg",
     authDomain: "crwn-db-7a24b.firebaseapp.com",

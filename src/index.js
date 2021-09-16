@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react=redux';
+
+import store from './redux/store';
 
 import './index.css';
 import App from './App';
+ 
+
+
 // import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 // import reportWebVitals from './reportWebVitals';
 
+
+// Provider is a component that is a parent if everything inside 
+// of all application. And as Parent it allows the access everything
+// that is related to the Store that will put all the actual code that
+// will put on the store on all redux stat.
 ReactDOM.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>,   
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>,   
     document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
