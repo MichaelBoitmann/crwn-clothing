@@ -25,7 +25,8 @@ const CollectionItem = ({ item, addItem }) => {
                 Add to Cart 
             </CustomButton>
         </div>
-)};
+    )
+};
 
 const mapDispatchToProps = dispatch => ({
     addItem: item => dispatch(addItem(item))
