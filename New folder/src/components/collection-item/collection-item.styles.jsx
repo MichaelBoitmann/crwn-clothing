@@ -8,6 +8,7 @@ export const CollectionItemContainer = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
+  margin-bottom: 30px;
 
   &:hover {
     .image {
@@ -17,6 +18,8 @@ export const CollectionItemContainer = styled.div`
     button {
       opacity: 0.85;
       display: flex;
+      position: absolute;
+      top: 255px;
     }
   }
 `;
@@ -25,7 +28,7 @@ export const AddButton = styled(CustomButton)`
   width: 80%;
   opacity: 0.7;
   position: absolute;
-  top: 155px;
+  top: 255px;
   display: none;
 `;
 
@@ -42,7 +45,7 @@ export const CollectionFooterContainer = styled.div`
   width: 100%;
   height: 5%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 18px;
 `;
 
